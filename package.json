@@ -1,0 +1,64 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": ["dist"],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "postbuild": "cpy **/*.json ../dist/ --cwd=src --parents",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build && npm run postbuild",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 4
+  },
+  "name": "ndc-xml2json",
+  "author": "chriss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisstina/ndc-xml2json"
+  },
+  "homepage": "https://github.com/chrisstina/ndc-xml2json",
+  "module": "dist/ndc-xml2json.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/ndc-xml2json.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/ndc-xml2json.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.9.2",
+    "@types/xmldom": "^0.1.30",
+    "cpy-cli": "^3.1.1",
+    "husky": "^5.0.9",
+    "size-limit": "^4.9.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "xmldom": "^0.4.0"
+  }
+}
