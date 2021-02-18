@@ -9,7 +9,7 @@ function checkVersion(version: string) {
     assert(ALLOWED_VERSIONS.indexOf(version) !== -1, 'Unsupported version')
 }
 
-function getTextContent(node : any): string | null {
+function getTextContent(node: any): string | null {
     var text = null
     for (var i = 0; i < node.childNodes.length; i++) {
         var ch = node.childNodes[i]
@@ -34,7 +34,7 @@ function getElementChildNodes(node: any) {
     return children
 }
 
-function parse(node : any, xpath: string) {
+function parse(node: any, xpath: string) {
     // opening object
     json += '{'
 
