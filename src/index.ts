@@ -9,7 +9,7 @@ function checkVersion(version: string) {
     assert(ALLOWED_VERSIONS.indexOf(version) !== -1, 'Unsupported version')
 }
 
-function getTextContent(node: Element): string | null {
+function getTextContent(node : any): string | null {
     var text = null
     for (var i = 0; i < node.childNodes.length; i++) {
         var ch = node.childNodes[i]
@@ -23,10 +23,10 @@ function getTextContent(node: Element): string | null {
     return text
 }
 
-function getElementChildNodes(node: Element): Element[] {
+function getElementChildNodes(node: any) {
     var children = []
-    for (var i = 0; i < node.childElementCount; i++) {
-        var ch = node.children[i]
+    for (var i = 0; i < node.childNodes.length; i++) {
+        var ch = node.childNodes[i]
         if (ch.nodeType === 1) {
             children.push(ch)
         }
@@ -34,7 +34,7 @@ function getElementChildNodes(node: Element): Element[] {
     return children
 }
 
-function parse(node: Element, xpath: string) {
+function parse(node : any, xpath: string) {
     // opening object
     json += '{'
 

@@ -8,5 +8,6 @@ describe('xml 2 json converter', () => {
         const json = xml2json(xml, '182')
         expect(json).not.toEqual(-1)
         expect(json.IATA_AirShoppingRQ).not.toBeUndefined()
+        expect(Object.keys(json.IATA_AirShoppingRQ).length).toBeGreaterThan(0)
     })
 })
