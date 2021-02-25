@@ -134,6 +134,7 @@ function convert(xmlData: string): {} {
  * @param {string} version
  */
 const xml2json = (xml: string, version: string): {} | number => {
+    json = ''
     try {
         checkVersion(version)
         singletons = singletons || require(`./singletons/singletons-${version}.json`)
