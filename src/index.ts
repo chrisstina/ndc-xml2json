@@ -1,7 +1,7 @@
 import assert from 'assert'
-import { DOMParser } from 'xmldom'
 import { ALLOWED_VERSIONS } from './constants/versions'
 
+const { DOMParser } = require('@xmldom/xmldom')
 let singletons: string[]
 let json = ''
 
