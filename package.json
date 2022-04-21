@@ -1,5 +1,5 @@
 {
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,10 +12,9 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "postbuild": "cpy **/*.json ../dist/ --cwd=src --parents",
+    "postbuild": "cpy ./singletons ../dist --cwd=src",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build && npm run postbuild",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
