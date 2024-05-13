@@ -1,5 +1,5 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,9 +14,7 @@
     "build": "tsdx build",
     "postbuild": "cpy ./singletons ../dist --cwd=src",
     "test": "tsdx test",
-    "lint": "tsdx lint",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "lint": "tsdx lint"
   },
   "peerDependencies": {},
   "husky": {
@@ -39,27 +37,15 @@
   },
   "homepage": "https://github.com/chrisstina/ndc-xml2json",
   "module": "dist/ndc-xml2json.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/ndc-xml2json.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/ndc-xml2json.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^7.0.8",
     "@types/xmldom": "^0.1.30",
     "cpy-cli": "^4.1.0",
     "husky": "^5.0.9",
-    "size-limit": "^4.9.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "@xmldom/xmldom": "^0.7.0"
+    "@xmldom/xmldom": ">=0.7.7"
   }
 }
